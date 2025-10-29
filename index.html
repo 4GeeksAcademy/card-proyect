@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paymen for example</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons (para los logos) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body { background:#f6f7f9; }
+    .payment-wrapper { max-width: 950px; margin: 40px auto; }
+    .card { border-radius: .4rem; }
+    .card-header { font-weight: 600; font-size: 1.15rem; }
+    .logos i { font-size: 1.2rem; }
+    .logos .badge {
+      background:#f1f3f5; color:#343a40; border:1px solid #dee2e6;
+    }
+    .form-footer {
+      border-top: 1px solid #e9ecef; margin-top: 1rem; padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container payment-wrapper">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white">Payment form example</div>
+      <div class="card-body">
+          <div class="alert alert-danger py-2" role="alert">
+          Some fields are missing
+        </div>
+
+        <!-- FORM -->
+        <form novalidate>
+          <div class="row g-3">
+            <!-- Card # -->
+            <div class="col-md-8">
+              <label for="cardNumber" class="form-label">Card #</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cardNumber"
+                placeholder="XXXXXXXXXXXXXXXX"
+                inputmode="numeric"
+                pattern="[0-9\s]{13,19}"
+              />
+            </div>
+               <!-- Banner de error -->
+        <div class="alert alert-danger py-2" role="alert">
+          Some fields are missing
+        </div>
+
+        <!-- FORM -->
+        <form novalidate>
+          <div class="row g-3">
+           
+
+            <!-- CVC -->
+            <div class="col-md-2">
+              <label for="cvc" class="form-label">CVC #</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cvc"
+                placeholder="0000"
+                inputmode="numeric"
+                pattern="[0-9]{3,4}"
+              />
+            </div>
+              <!-- Amount -->
+            <div class="col-md-2">
+              <label for="amount" class="form-label">Amount</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="amount"
+                  placeholder="Amount"
+                  min="0"
+                  step="0.01"
+                />
+              </div>
+            </div>
+               <!-- First / Last name -->
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" />
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" />
+            </div>
+
+            <!-- City / State / Postal -->
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" />
+            </div>
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select id="state" class="form-select">
+                <option selected>Pick a state</option>
+                <option>NY</option><option>NJ</option><option>CA</option>
+                <option>FL</option><option>TX</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="zip" class="form-label">Postal Code</label>
+              <input type="text" class="form-control" id="zip" />
+            </div>
+
+            <!-- We accept -->
+            <div class="col-12">
+              <div class="mb-1">We accept:</div>
+              <div class="logos d-flex gap-2">
+                <span class="badge rounded-pill px-3 py-2">
+                  <i class="bi bi-credit-card-2-front"></i> Visa
+                </span>
+                <span class="badge rounded-pill px-3 py-2">
+                  <i class="bi bi-credit-card"></i> MasterCard
+                </span>
+                <span class="badge rounded-pill px-3 py-2">
+                  <i class="bi bi-credit-card"></i> AmEx
+                </span>
+                <span class="badge rounded-pill px-3 py-2">
+                  <i class="bi bi-credit-card"></i> PayPal
+                </span>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4"
+                placeholder="Add any notes here."></textarea>
+            </div>
+          </div>
+
+          <!-- Footer buttons -->
+          <div class="d-flex justify-content-end gap-2 form-footer">
+            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (opcional, para componentes interactivos) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+</head>
+<body>
+    
+</body>
+</html>
