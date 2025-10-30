@@ -1,47 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paymen for example</title>
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <!-- Bootstrap Icons (para los logos) -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap Icons (para los logos) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    body { background:#f6f7f9; }
-    .payment-wrapper { max-width: 950px; margin: 40px auto; }
-    .card { border-radius: .4rem; }
-    .card-header { font-weight: 600; font-size: 1.15rem; }
-    .logos i { font-size: 1.2rem; }
-    .logos .badge {
-      background:#f1f3f5; color:#343a40; border:1px solid #dee2e6;
-    }
-    .form-footer {
-      border-top: 1px solid #e9ecef; margin-top: 1rem; padding-top: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="container payment-wrapper">
-    <div class="card shadow-sm">
-      <div class="card-header bg-white">Payment form example</div>
-      <div class="card-body">
-          <div class="alert alert-danger py-2" role="alert">
+    <style>
+      body {
+        background: #f6f7f9;
+      }
+      .payment-wrapper {
+        max-width: 950px;
+        margin: 40px auto;
+      }
+      .card-form {
+        border-radius: 0.4rem;
+        border: 1px solid black;
+        padding: 8px;
+        background-color: white;
+      }
+      .card-header {
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .logos i {
+        font-size: 1.2rem;
+      }
+      .logos .badge {
+        background: #f1f3f5;
+        color: #343a40;
+        border: 1px solid #dee2e6;
+      }
+      .form-footer {
+        border-top: 1px solid #e9ecef;
+        margin-top: 1rem;
+        padding-top: 1rem;
+      }
+      .accept-card {
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 10px;
+        margin-right: 100px;
+        display: inline-block;
+        margin-top: 5px;
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container payment-wrapper">
+      <div class="card-form">
+        <div class="card-header bg-white">Payment form example</div>
+        <div class="alert alert-danger py-2" role="alert">
           Some fields are missing
         </div>
-
-        <!-- FORM -->
-        <form novalidate>
+        <div class="form-section">
           <div class="row g-3">
             <!-- Card # -->
-            <div class="col-md-8">
+            <div class="col-md-6">
               <label for="cardNumber" class="form-label">Card #</label>
               <input
                 type="text"
@@ -52,18 +84,9 @@
                 pattern="[0-9\s]{13,19}"
               />
             </div>
-               <!-- Banner de error -->
-        <div class="alert alert-danger py-2" role="alert">
-          Some fields are missing
-        </div>
-
-        <!-- FORM -->
-        <form novalidate>
-          <div class="row g-3">
-           
-
+            <!-- Banner de error -->
             <!-- CVC -->
-            <div class="col-md-2">
+            <div class="col-md-4">
               <label for="cvc" class="form-label">CVC #</label>
               <input
                 type="text"
@@ -74,7 +97,7 @@
                 pattern="[0-9]{3,4}"
               />
             </div>
-              <!-- Amount -->
+            <!-- Amount -->
             <div class="col-md-2">
               <label for="amount" class="form-label">Amount</label>
               <div class="input-group">
@@ -89,7 +112,8 @@
                 />
               </div>
             </div>
-               <!-- First / Last name -->
+
+            <!-- First / Last name -->
             <div class="col-md-6">
               <label for="firstName" class="form-label">First Name</label>
               <input type="text" class="form-control" id="firstName" />
@@ -106,60 +130,143 @@
             </div>
             <div class="col-md-4">
               <label for="state" class="form-label">State</label>
-              <select id="state" class="form-select">
-                <option selected>Pick a state</option>
-                <option>NY</option><option>NJ</option><option>CA</option>
-                <option>FL</option><option>TX</option>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
               </select>
             </div>
             <div class="col-md-2">
               <label for="zip" class="form-label">Postal Code</label>
               <input type="text" class="form-control" id="zip" />
             </div>
-
             <!-- We accept -->
-            <div class="col-12">
-              <div class="mb-1">We accept:</div>
-              <div class="logos d-flex gap-2">
-                <span class="badge rounded-pill px-3 py-2">
-                  <i class="bi bi-credit-card-2-front"></i> Visa
-                </span>
-                <span class="badge rounded-pill px-3 py-2">
-                  <i class="bi bi-credit-card"></i> MasterCard
-                </span>
-                <span class="badge rounded-pill px-3 py-2">
-                  <i class="bi bi-credit-card"></i> AmEx
-                </span>
-                <span class="badge rounded-pill px-3 py-2">
-                  <i class="bi bi-credit-card"></i> PayPal
-                </span>
+            <div class="row">
+              <div class="col-md-6">
+                <label>We accept:</label>
+                <div class="accept-card">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="Option1"
+                    />
+                    <label class="form-check-label" for="InlineRadio1">
+                      <i class="fa-brands fa-cc-visa"></i
+                    ></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="Option2"
+                    />
+                    <label class="form-check-label" for="InlineRadio2">
+                      <i class="fa-brands fa-cc-mastercard"></i
+                    ></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio3"
+                      value="Option3"
+                    />
+                    <label class="form-check-label" for="InlineRadio3">
+                      <i class="fa-brands fa-cc-amex"></i>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio4"
+                      value="Option4"
+                    />
+                    <label class="form-check-label" for="InlineRadio4">
+                      <i class="fa-brands fa-cc-paypal"></i>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="col-md-6">
+                <label for="message">Message</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  id="message"
+                  placeholder="Add any notes here."
+                ></textarea>
               </div>
             </div>
-
-            <!-- Message -->
-            <div class="col-12">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4"
-                placeholder="Add any notes here."></textarea>
+            <!-- Footer buttons -->
+            <div class="d-flex justify-content-end gap-2 form-footer">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Send</button>
             </div>
           </div>
 
-          <!-- Footer buttons -->
-          <div class="d-flex justify-content-end gap-2 form-footer">
-            <button type="button" class="btn btn-secondary">Cancel</button>
-            <button type="submit" class="btn btn-primary">Send</button>
-          </div>
-        </form>
+          <!-- Bootstrap JS (opcional, para componentes interactivos) -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Bootstrap JS (opcional, para componentes interactivos) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-</head>
-<body>
-    
-</body>
+  </body>
 </html>
